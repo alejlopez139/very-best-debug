@@ -30,7 +30,9 @@ class UsersController < ApplicationController
     
     the_user.username = params.fetch("query_username")
     the_user.save
-    redirect_to("/users/#{user.username}")
+    
+    new_username = the_user.username
+    redirect_to("/users/#{new_username}")
   end
 
 end
